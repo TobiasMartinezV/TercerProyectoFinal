@@ -1,0 +1,470 @@
+@import "base/listas";
+@import "base/mixin";
+@import "base/extend";
+ 
+/*estilos de la pagina principal*/
+.main-index{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1.5fr 1fr 1fr 0.5fr;
+ 
+    grid-template-areas:
+    "main-p main-p"
+    "imagen-uno imagen-dos"
+    "imagen-tres imagen-cuatro"
+    "parrafo parrafo";
+    @extend %columnas;
+    @include alineacion;
+    background-color: nth($colores, 1);
+    .main-p{
+        grid-area: main-p;
+        text-align: center;
+        font-weight: bold;
+        color: nth($colores, 2);
+        font-size: 1.2rem;
+        line-height: 1rem;
+    }
+    .imagen-uno{
+        grid-area: imagen-uno;
+        @include medidas (100px, 100px)
+    }
+    .imagen-dos{
+        grid-area: imagen-dos;
+        @include medidas (100px, 100px)
+    }
+    .iamgen-tres{
+        grid-area: imagen-tres;
+        @include medidas (100px, 100px)
+    }
+    .iamgen-cuatro{
+        grid-area: imagen-cuatro;
+        @include medidas (100px, 100px)
+    }
+    p{
+        grid-area: parrafo;
+        color: nth($colores, 3);
+    }
+}
+ 
+footer{
+    background-color: nth($colores, 1);
+    p{
+        text-align: center;
+        color: nth($colores, 4);
+    }
+}
+ 
+ 
+ 
+ 
+/*mediaqueries*/
+@media screen and (min-width: 600px){
+    .main-index{
+        grid-template-areas:
+        "main-p main-p main-p main-p"
+        "imagen-uno imagen-dos"
+        "imagen-tres imagen-cuatro"
+        "parrafo parrafo parrafo parrafo";
+        @include alineacion;
+        .main-p{
+            font-size: 1.5rem;
+        }
+    }
+}
+ 
+@media screen and (min-width: 1024px){
+ 
+   .main-index{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "main-p main-p main-p main-p"
+    "imagen-uno imagen-dos imagen-tres imagen-cuatro"
+    "parrafo parrafo parrafo parrafo";
+   }
+}
+
+
+
+
+/*estilo de pagina contacto*/
+.body-rutinas{
+    nav{
+        div{
+            a:hover{
+                background-color: rgb(86, 79, 79);
+    box-shadow: 2px 4px 8px 1px black;
+    transform: scale(0.9);
+            }
+        }
+    }
+}
+
+.body-contacto{
+    background-image: linear-gradient(orange,yellow);
+    height: 100vh;
+    nav{
+        div{
+            a:hover{
+                background-color: rgb(86, 79, 79);
+                box-shadow: 2px 4px 8px 1px black;
+                transform: scale(0.9);
+            }
+        }
+    }
+   
+}
+ 
+.main-contacto{
+    margin: 15px;
+}
+ 
+.formulario div{
+    background-color: rgb(210, 208, 208);
+    display: block;
+    padding: 15px;
+}
+ 
+
+/*estilo pagina rutinas*/
+.body-rutinas{
+    background-image: linear-gradient(orange,yellow);
+}
+ 
+.main-rutinas{
+    margin: 7px;
+    .rutinas{
+        grid-area: rutinas;
+        @extend %font;
+    }
+    .rutinasej{
+        grid-area: rutinasej;
+    }
+    .rutina-principiante{
+        grid-area: rutina-principiante;
+        @extend %font;
+        font-style: oblique;
+    }
+    .rutina-inicial{
+        grid-area: rutina-inicial;
+        @extend %font;
+        font-style: oblique;
+    }
+    .rutina-intermedio{
+        grid-area: rutina-intermedio;
+        font-weight: bold;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-style: oblique;
+    }
+    .rutina-avanzado{
+        grid-area: rutina-avanzado;
+        @extend %font;
+        font-style: oblique;
+    }
+    .img-inicial{
+        grid-area: img-inicial;
+        margin-bottom: 50px;
+    }
+    .img-principiante{
+        grid-area: img-principiante;
+        margin-bottom: 50px;
+    }.img-intermedio{
+        grid-area: img-intermedio;
+        margin-bottom: 50px;
+    }.img-avanzado{
+        grid-area: img-avanzado;
+        margin-bottom: 50px;
+    }
+}
+.img-inicial:hover{
+    transform: scale(1.02,1.02);
+}
+.img-inicial:active{
+    transform: scale(1.5,1.5);
+}
+ 
+.img-principiante:hover{
+    transform: scale(1.02,1.02);
+}
+.img-principiante:active{
+    transform: scale(1.5,1.5);
+}
+ 
+.img-intermedio:hover{
+    transform: scale(1.02,1.02);
+}
+.img-intermedio:active{
+    transform: scale(1.5,1.5);
+}
+ 
+.img-avanzado:hover{
+    transform: scale(1.02,1.02);
+}
+.img-avanzado:active{
+    transform: scale(1.5,1.5);
+}
+ 
+footer{
+    text-align: center;
+}
+ 
+.main-rutinas{
+    height: 320vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.01fr 0.02fr 0.02fr 0.2fr  0.02fr 0.2fr 0.02fr 0.2fr 0.02fr 0.2fr;
+    grid-template-areas:
+    "rutinas"
+    "rutinasej"
+    "rutina-inicial"
+    "img-inicial"
+    "rutina-principiante"
+    "img-principiante"
+    "rutina-intermedio"
+    "img-intermedio"
+    "rutina-avanzado"
+    "img-avanzado"
+    ;
+ 
+}
+ 
+ 
+/*mediaqueries para ipad*/
+@media screen and (min-width: 600px){
+    .main-rutinas{
+        height: 150vh;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.01fr 0.02fr 0.02fr 0.2fr 0.02fr 0.2fr;
+        grid-template-areas:
+        "rutinas rutinas"
+        "rutinasej rutinasej"
+        "rutina-inicial rutina-principiante"
+        "img-inicial img-principiante"
+        "rutina-intermedio rutina-avanzado"
+        "img-intermedio img-avanzado"
+        ;
+        justify-items: center;
+    }
+ 
+    .img-inicial{
+        width: 370px;
+        height: 570px;
+    }
+    .img-principiante{
+        width: 370px;
+        height: 570px;
+    }.img-intermedio{
+        width: 370px;
+        height: 570px;
+    }.img-avanzado{
+        width: 370px;
+        height: 570px;
+    }
+}
+ 
+ 
+/*mediaqueries para compu*/
+@media screen and (min-width:1024px){
+    .main-rutinas{
+        height: 150vh;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.01fr 0.02fr 0.02fr 0.2fr ;
+        grid-template-areas:
+        "rutinas rutinas rutinas rutinas"
+        "rutinasej rutinasej rutinasej rutinasej"
+        "rutina-inicial rutina-principiante rutina-intermedio rutina-avanzado"
+        "img-inicial img-principiante img-intermedio img-avanzado";
+        justify-items: center;
+    }
+ 
+        .img-inicial{
+            width: 320px;
+            height: 520px;
+        }.img-principiante{
+            width: 320px;
+            height: 520px;
+        }.img-intermedio{
+            width: 320px;
+            height: 520px;
+        }.img-avanzado{
+            width: 320px;
+            height: 520px;
+        }
+ 
+        .rutinasej{
+            margin-top: 7px;
+            margin-bottom: 30px;
+        }
+       
+    }
+
+
+    /*estilos pagina profesores*/
+    .main-profesores{
+        background-color: nth($colores, 1);
+        h1{
+            text-align: center;
+            @extend %font;
+        }
+    }
+    
+
+
+/* estilo para la pagina de fotos*/
+.main-fotos{
+    background-color: nth($colores, 1);
+    height: 400vh;
+    display: grid;
+    grid-template-columns: 0.5fr ;
+    grid-template-rows: 0.2fr 0.5fr 0.2fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
+ 
+    grid-template-areas:
+    "parrafo-fotos"
+    "fotos-uno" 
+    "fotos-dos"
+    "fotos-tres" 
+    "fotos-cuatro";
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    h2{@extend %font;
+    }
+}
+
+.parrafo-fotos{
+    grid-area: parrafo-fotos; 
+    margin: 0;
+
+}
+.fotos-uno{
+    grid-area: fotos-uno;
+}
+
+.fotos-uno img{
+    width: 2fr;
+    height: 0.8fr;
+}
+
+.fotos-dos{
+    grid-area: fotos-dos;
+}
+
+.fotos-dos img{
+    height: 0.8fr;
+    width: 2fr;
+}
+
+.fotos-tres{
+    grid-area: fotos-tres;
+}
+
+.fotos-tres img{
+    height: 0.8fr;
+    width: 2fr;
+}
+
+.fotos-cuatro{
+    grid-area: fotos-cuatro;
+}
+
+.fotos-cuatro{
+    height: 0.8fr;
+    width: 2fr;
+}
+
+.parrafo-video{
+    grid-area: parrafo-video;
+    justify-items: center;
+}
+
+.fotos-video{
+    grid-area: fotos-video;
+    height: 200px;
+    width: 350px;
+}
+
+.fotos-video{
+    height: 200px;
+    width: 350px;
+}
+
+.parrafo-fotos{
+    margin: 5px;
+    grid-area: parrafo-fotos;
+}
+
+
+/*mediaqueries para la pagina de fotos*/
+@media screen and (min-width:600px) {
+    .main-fotos{
+        height: 200vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1.5fr;
+     
+        grid-template-areas:
+        "parrafo-fotos parrafo-fotos"
+        "menu-fotos menu-fotos"
+        "fotos-uno fotos-dos"
+        "fotos-tres fotos-cuatro"
+        "parrafo-video fotos-video";
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+    
+    }
+    .menufotos ul{
+        display: flex;
+        column-gap: 10px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        background-color: rgb(131, 49, 5);
+        padding: 10px;
+    }
+     
+    .menufotos ul li{
+        list-style: none;
+        background-color: rgb(200, 70, 0);
+        padding: 5px;
+        font-weight: bold;
+    }
+
+}
+
+
+
+@media screen and (min-width: 1024px){
+    .main-fotos{
+    height: 200vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1.5fr;
+ 
+    grid-template-areas:
+    "parrafo-fotos parrafo-fotos"
+    "menu-fotos menu-fotos"
+    "fotos-uno fotos-dos"
+    "fotos-tres fotos-cuatro"
+    "parrafo-video fotos-video";
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.menufotos ul{
+    display: flex;
+    column-gap: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: rgb(131, 49, 5);
+    padding: 10px;
+}
+ 
+.menufotos ul li{
+    list-style: none;
+    background-color: rgb(200, 70, 0);
+    padding: 5px;
+    font-weight: bold;
+}
+}

@@ -1,0 +1,10 @@
+@mixin medidas ($width, $height){
+    width: $width;
+    height: $height;
+}
+ 
+@mixin alineacion{
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
